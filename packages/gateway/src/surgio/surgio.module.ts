@@ -1,5 +1,5 @@
 import { Module, DynamicModule, Global } from '@nestjs/common'
-import { loadConfig } from 'surgio/config'
+import { loadConfig } from '@daichangchun/surgio/config'
 
 import { KEY, SurgioHelper } from './surgio-helper'
 import { SurgioService } from './surgio.service'

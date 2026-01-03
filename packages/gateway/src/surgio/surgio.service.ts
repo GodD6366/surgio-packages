@@ -1,7 +1,7 @@
 import { Injectable, Inject, HttpException, HttpStatus } from '@nestjs/common'
-import { Artifact } from 'surgio/generator'
-import { PossibleProviderType, GetNodeListParams } from 'surgio/provider'
-import { CommandConfig } from 'surgio/internal'
+import { Artifact } from '@daichangchun/surgio/generator'
+import { PossibleProviderType, GetNodeListParams } from '@daichangchun/surgio/provider'
+import { CommandConfig } from '@daichangchun/surgio/internal'
 
 import { KEY, SurgioHelper } from './surgio-helper'
 
@@ -59,33 +59,33 @@ export class SurgioService {
   ): Promise<Artifact> {
     const artifactConfig = format
       ? ({
-          name: `${providerName}.conf`,
-          provider: providerName,
-          template: '',
-          templateString: this.getTemplateByFormat(
-            format,
-            options.filter,
-            providerName
-          ),
-          ...(options.combineProviders
-            ? {
-                combineProviders: options.combineProviders,
-              }
-            : null),
-        } as const)
+        name: `${providerName}.conf`,
+        provider: providerName,
+        template: '',
+        templateString: this.getTemplateByFormat(
+          format,
+          options.filter,
+          providerName
+        ),
+        ...(options.combineProviders
+          ? {
+            combineProviders: options.combineProviders,
+          }
+          : null),
+      } as const)
       : template
-      ? ({
+        ? ({
           name: `${providerName}.conf`,
           downloadUrl: options.downloadUrl,
           provider: providerName,
           template,
           ...(options.combineProviders
             ? {
-                combineProviders: options.combineProviders,
-              }
+              combineProviders: options.combineProviders,
+            }
             : null),
         } as const)
-      : (() => {
+        : (() => {
           throw new Error('未指定 format 和 template')
         })()
 
@@ -157,15 +157,13 @@ export class SurgioService {
         return `{{ getSurgeNodes(nodeList${filter ? `, ${filter}` : ''}) }}`
 
       case 'qx-server':
-        return `{{ getQuantumultXNodes(nodeList${
-          filter ? `, ${filter}` : ''
-        }) }}`
+        return `{{ getQuantumultXNodes(nodeList${filter ? `, ${filter}` : ''
+          }) }}`
 
       case 'clash-provider':
         return [
           '---',
-          `{{ {proxies: getClashNodes(nodeList${
-            filter ? `, ${filter}` : ''
+          `{{ {proxies: getClashNodes(nodeList${filter ? `, ${filter}` : ''
           })} | yaml }}`,
           '',
         ].join('\n')

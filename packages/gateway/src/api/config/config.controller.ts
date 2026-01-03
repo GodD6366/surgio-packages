@@ -1,12 +1,12 @@
 import { Controller, Get } from '@nestjs/common'
-import { packageJson as corePkgFile } from 'surgio/internal'
+import { packageJson as corePkgFile } from '@daichangchun/surgio/internal'
 import _ from 'lodash'
 
 import { SurgioService } from '../../surgio/surgio.service'
 
 @Controller('api')
 export class ConfigController {
-  constructor(private readonly surgioService: SurgioService) {}
+  constructor(private readonly surgioService: SurgioService) { }
 
   @Get('/config')
   public async config(): Promise<any> {

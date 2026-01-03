@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common'
 import type { Response } from 'express'
 import _ from 'lodash'
-import { formatSubscriptionUserInfo } from 'surgio/utils'
+import { formatSubscriptionUserInfo } from '@daichangchun/surgio/utils'
 
 import { APIAuthGuard } from '../auth/api-auth.guard'
 import { Roles } from '../auth/roles.decorator'
@@ -20,7 +20,7 @@ import { SurgioService } from '../surgio/surgio.service'
 @Controller('api')
 @UseGuards(APIAuthGuard)
 export class ApiController {
-  constructor(private readonly surgioService: SurgioService) {}
+  constructor(private readonly surgioService: SurgioService) { }
 
   @Post('/clean-cache')
   @Roles(Role.ADMIN)

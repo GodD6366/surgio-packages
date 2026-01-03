@@ -1,7 +1,7 @@
 import { HttpException } from '@nestjs/common'
 import { Test, TestingModule } from '@nestjs/testing'
 import { join } from 'path'
-import { httpClient } from 'surgio/utils'
+import { httpClient } from '@daichangchun/surgio/utils'
 
 import { SurgioModule } from './surgio.module'
 import { SurgioService } from './surgio.service'

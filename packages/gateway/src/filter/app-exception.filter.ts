@@ -9,7 +9,7 @@ import {
 import { Request, Response } from 'express'
 import { ServerResponse } from 'http'
 import Youch from 'youch'
-import { isSurgioError } from 'surgio/internal'
+import { isSurgioError } from '@daichangchun/surgio/internal'
 
 @Catch()
 export class AppExceptionsFilter implements ExceptionFilter {
@@ -28,8 +28,7 @@ export class AppExceptionsFilter implements ExceptionFilter {
       response.status(status)
 
       this.logger.error(
-        `${request.method} ${request.url} ${status} "${
-          request.headers['user-agent'] || '-'
+        `${request.method} ${request.url} ${status} "${request.headers['user-agent'] || '-'
         }"`
       )
 
@@ -82,11 +81,10 @@ export class AppExceptionsFilter implements ExceptionFilter {
         .addLink(() => {
           return `
 <div>
-  ${
-    isSurgioError(exception)
-      ? `<div class="frame-preview" style="width: 100%;"><pre class="language-text">${exception.format()}</pre></div>`
-      : ''
-  }
+  ${isSurgioError(exception)
+              ? `<div class="frame-preview" style="width: 100%;"><pre class="language-text">${exception.format()}</pre></div>`
+              : ''
+            }
   <br />
   <p>加入交流群汇报问题：<a href="https://t.me/surgiotg" target="_blank" rel="noopener">https://t.me/surgiotg</a></p>
 </div>

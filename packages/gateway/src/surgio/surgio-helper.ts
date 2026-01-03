@@ -4,15 +4,15 @@ import fs from 'fs-extra'
 import { Environment } from 'nunjucks'
 import semver from 'semver'
 import { Logger } from '@nestjs/common'
-import { getEngine } from 'surgio/generator'
-import { getProvider, PossibleProviderType } from 'surgio/provider'
+import { getEngine } from '@daichangchun/surgio/generator'
+import { getProvider, PossibleProviderType } from '@daichangchun/surgio/provider'
 import type {
   ArtifactConfig,
   CommandConfig,
   RemoteSnippet,
-} from 'surgio/internal'
-import { packageJson as corePackageJson, cleanCaches } from 'surgio/internal'
-import { TMP_FOLDER_NAME } from 'surgio/constant'
+} from '@daichangchun/surgio/internal'
+import { packageJson as corePackageJson, cleanCaches } from '@daichangchun/surgio/internal'
+import { TMP_FOLDER_NAME } from '@daichangchun/surgio/constant'
 import { createHash } from 'crypto'
 
 export const KEY = 'SURGIO_HELPER'
