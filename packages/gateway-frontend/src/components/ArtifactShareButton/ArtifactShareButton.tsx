@@ -5,7 +5,7 @@ import { useSnackbar } from 'notistack'
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import Clipboard from 'react-clipboard.js'
-import { ArtifactConfig } from 'surgio/internal'
+import { ArtifactConfig } from '@daichangchun/surgio/internal'
 import {
   Dialog,
   DialogContent,

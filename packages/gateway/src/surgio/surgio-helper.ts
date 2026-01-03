@@ -79,7 +79,7 @@ export class SurgioHelper {
 
   private async checkCoreVersion(): Promise<void> {
     const gatewayPkgFile = require('../../package.json')
-    const peerVersion = gatewayPkgFile.peerDependencies.surgio
+    const peerVersion = gatewayPkgFile.peerDependencies['@daichangchun/surgio']
     const corePkgVersion = corePackageJson.version as string
 
     // Pre-release doesn't need to check
@@ -101,7 +101,7 @@ export class SurgioHelper {
       )
       Logger.warn('', undefined, false)
       Logger.warn('  命令：', undefined, false)
-      Logger.warn('  npm install surgio@latest', undefined, false)
+      Logger.warn('  npm install @daichangchun/surgio@latest', undefined, false)
       Logger.warn('', undefined, false)
       throw new Error('Surgio 版本过低')
     }

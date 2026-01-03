@@ -10,7 +10,7 @@ import { observer } from 'mobx-react-lite'
 import React, { useMemo } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import { ArtifactConfig } from 'surgio/internal'
+import { ArtifactConfig } from '@daichangchun/surgio/internal'
 import { spacing } from 'tailwindcss/defaultTheme'
 
 import ArtifactActionButtons from '../ArtifactActionButtons'

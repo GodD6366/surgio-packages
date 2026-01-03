@@ -37,6 +37,7 @@
     "prettier": "^2.8.8",
     "rimraf": "^5.0.10",
     "surgio": "^3.11.3",
+    "@daichangchun/surgio": "^3.11.3",
     "ts-jest": "^29.4.6",
     "ts-node": "^10.9.2",
     "turbo": "^1.13.4",

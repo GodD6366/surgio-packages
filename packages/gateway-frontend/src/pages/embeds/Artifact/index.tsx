@@ -1,6 +1,6 @@
 import { Loader2 } from 'lucide-react'
 import React from 'react'
-import { ArtifactConfig } from 'surgio/internal'
+import { ArtifactConfig } from '@daichangchun/surgio/internal'
 import useSWR from 'swr'
 import { useParams, useLocation } from 'react-router-dom'
 import ArtifactCard from '@/components/ArtifactCard'
