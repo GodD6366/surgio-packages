@@ -107,6 +107,9 @@ importers:
 
   packages/gateway:
     dependencies:
+      '@daichangchun/surgio-gateway-frontend':
+        specifier: workspace:*
+        version: link:../gateway-frontend
       '@nestjs/common':
         specifier: ^10.4.16
         version: 10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -124,10 +127,7 @@ importers:
         version: 9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1)
       '@nestjs/serve-static':
         specifier: ^3.0.1
-        version: 3.0.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/platform-express@9.4.1)(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1))(express@4.18.2)
-      '@surgio/gateway-frontend':
-        specifier: workspace:*
-        version: link:../gateway-frontend
+        version: 3.0.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1)(express@4.18.2)
       bluebird:
         specifier: ^3.7.2
         version: 3.7.2
@@ -188,7 +188,7 @@ importers:
         version: 9.2.0(chokidar@3.5.3)(typescript@5.9.3)
       '@nestjs/testing':
         specifier: ^9.4.1
-        version: 9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/platform-express@9.4.1)(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/platform-express@9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1))
+        version: 9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1)(@nestjs/platform-express@9.4.1)
       '@types/bluebird':
         specifier: ^3.5.38
         version: 3.5.38
@@ -2101,24 +2101,28 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@nrwl/nx-linux-arm64-musl@15.9.7':
     resolution: {integrity: sha512-zyStqjEcmbvLbejdTOrLUSEdhnxNtdQXlmOuymznCzYUEGRv+4f7OAepD3yRoR0a/57SSORZmmGQB7XHZoYZJA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@nrwl/nx-linux-x64-gnu@15.9.7':
     resolution: {integrity: sha512-saNK5i2A8pKO3Il+Ejk/KStTApUpWgCxjeUz9G+T8A+QHeDloZYH2c7pU/P3jA9QoNeKwjVO9wYQllPL9loeVg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@nrwl/nx-linux-x64-musl@15.9.7':
     resolution: {integrity: sha512-extIUThYN94m4Vj4iZggt6hhMZWQSukBCo8pp91JHnDcryBg7SnYmnikwtY1ZAFyyRiNFBLCKNIDFGkKkSrZ9Q==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@nrwl/nx-win32-arm64-msvc@15.9.7':
     resolution: {integrity: sha512-GSQ54hJ5AAnKZb4KP4cmBnJ1oC4ILxnrG1mekxeM65c1RtWg9NpBwZ8E0gU3xNrTv8ZNsBeKi/9UhXBxhsIh8A==}
@@ -12281,7 +12285,7 @@ snapshots:
       '@types/node': 20.5.1
       chalk: 4.1.2
       cosmiconfig: 8.3.6(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.9.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.9.3))(ts-node@10.9.2(@types/node@18.19.130)(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -13385,7 +13389,7 @@ snapshots:
     transitivePeerDependencies:
       - chokidar
 
-  '@nestjs/serve-static@3.0.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/platform-express@9.4.1)(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1))(express@4.18.2)':
+  '@nestjs/serve-static@3.0.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1)(express@4.18.2)':
     dependencies:
       '@nestjs/common': 10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/platform-express@9.4.1)(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -13393,7 +13397,7 @@ snapshots:
     optionalDependencies:
       express: 4.18.2
 
-  '@nestjs/testing@9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/platform-express@9.4.1)(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/platform-express@9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1))':
+  '@nestjs/testing@9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/core@9.4.1)(@nestjs/platform-express@9.4.1)':
     dependencies:
       '@nestjs/common': 10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core': 9.4.1(@nestjs/common@10.4.16(reflect-metadata@0.1.13)(rxjs@7.8.1))(@nestjs/platform-express@9.4.1)(encoding@0.1.13)(reflect-metadata@0.1.13)(rxjs@7.8.1)
@@ -16368,11 +16372,11 @@ snapshots:
       - '@swc/core'
       - '@swc/wasm'
 
-  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.9.3))(ts-node@10.9.2(@types/node@20.5.1)(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@4.4.0(@types/node@20.5.1)(cosmiconfig@8.3.6(typescript@5.9.3))(ts-node@10.9.2(@types/node@18.19.130)(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
       '@types/node': 20.5.1
       cosmiconfig: 8.3.6(typescript@5.9.3)
-      ts-node: 10.9.2(@types/node@20.5.1)(typescript@5.9.3)
+      ts-node: 10.9.2(@types/node@18.19.130)(typescript@5.9.3)
       typescript: 5.9.3
 
   cosmiconfig@6.0.0:
