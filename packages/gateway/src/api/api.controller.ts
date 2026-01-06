@@ -74,7 +74,7 @@ export class ApiController {
         _.pick(provider, [
           'name',
           'type',
-          'url',
+          // 'url',
           'supportGetSubscriptionUserInfo',
         ])
       ),
