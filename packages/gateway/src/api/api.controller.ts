@@ -20,7 +20,7 @@ import { SurgioService } from '../surgio/surgio.service'
 @Controller('api')
 @UseGuards(APIAuthGuard)
 export class ApiController {
-  constructor(private readonly surgioService: SurgioService) { }
+  constructor(private readonly surgioService: SurgioService) {}
 
   @Post('/clean-cache')
   @Roles(Role.ADMIN)
@@ -70,14 +70,12 @@ export class ApiController {
 
     return {
       status: 'ok',
-      data: providerList.map((provider) =>
-        _.pick(provider, [
-          'name',
-          'type',
-          // 'url',
-          'supportGetSubscriptionUserInfo',
-        ])
-      ),
+      data: providerList.map((provider) => ({
+        name: provider.name,
+        type: provider.type,
+        supportGetSubscriptionUserInfo: provider.supportGetSubscriptionUserInfo,
+        url: 'url' in provider ? provider.url : undefined,
+      })),
     }
   }
 
